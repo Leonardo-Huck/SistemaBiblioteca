@@ -1,247 +1,135 @@
-# 📚 Sistema Web - Biblioteca Universidade Cesumar
+# 📚 Sistema Biblioteca
 
-Projeto acadêmico desenvolvido em **Java** para gerenciamento de livros do acervo interno da biblioteca universitária.
+Sistema Web para gerenciamento de livros desenvolvido como atividade acadêmica utilizando Java Web.
 
-A aplicação foi construída utilizando **Servlets, JSP e JSF**, aplicando conceitos de **Programação Orientada a Objetos (POO)** e seguindo o padrão arquitetural **MVC (Model-View-Controller)**.
-
----
-
-## 🎯 Objetivo
-
-Desenvolver um sistema web simples, funcional e com interface amigável que permita aos funcionários da biblioteca:
-
-- Cadastrar livros;
-- Visualizar os livros cadastrados;
-- Excluir livros do acervo;
-- Garantir validações básicas para evitar inconsistências nos dados.
+Permite cadastrar, listar e remover livros através de uma interface simples utilizando Servlets e JSP seguindo o padrão MVC.
 
 ---
 
 ## 🚀 Funcionalidades
 
-### 📖 Cadastro de Livros
-Permite cadastrar novos livros contendo:
-
-- Título
-- Autor
-- Ano de publicação
-- ISBN
-
-### 📋 Listagem de Livros
-Exibe todos os livros cadastrados de forma organizada.
-
-### 🗑 Exclusão de Livros
-Permite remover livros cadastrados utilizando ISBN.
-
-### ✅ Validação de Dados
-Tratamento de entradas inválidas como:
-
-- Campos obrigatórios vazios;
-- ISBN inválido;
-- Ano incorreto.
+✔ Cadastro de livros  
+✔ Listagem do acervo  
+✔ Exclusão de livros  
+✔ Validação básica dos dados  
+✔ Navegação entre telas
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Tecnologias
 
-| Tecnologia | Finalidade |
-|-----------|------------|
-| Java | Linguagem principal |
-| Servlet | Controle das requisições |
-| JSP | Interface Web |
-| JSF | Interface baseada em componentes |
-| HTML5 | Estrutura |
-| CSS3 | Estilização |
-| Apache Tomcat | Servidor de aplicação |
-| MVC | Arquitetura do sistema |
-
----
-
-## 🏛 Arquitetura do Projeto (MVC)
-
-### Model
-Responsável pelos dados e regras do sistema.
-
-Exemplos:
-- `Livro.java`
-- `LivroDAO.java`
-
-### View
-Responsável pela interface exibida ao usuário.
-
-Exemplos:
-- `cadastro.jsp`
-- `lista.jsp`
-- `excluir.xhtml`
-
-### Controller
-Responsável por controlar o fluxo das requisições.
-
-Exemplos:
-- `CadastroLivroServlet`
-- `ListarLivroServlet`
-- `ExcluirLivroServlet`
+- Java 17
+- Jakarta Servlet
+- JSP
+- JSTL
+- HTML5
+- CSS3
+- Maven
+- Apache Tomcat
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```text
-BibliotecaCesumar
-│
-├── src
-│
-├── model
-│   ├── Livro.java
-│   └── LivroDAO.java
-│
-├── controller
-│   ├── CadastroLivroServlet.java
-│   ├── ListarLivroServlet.java
-│   └── ExcluirLivroServlet.java
-│
-├── view
-│   └── LivroBean.java
-│
-└── webapp
-    ├── cadastro.jsp
-    ├── lista.jsp
-    └── excluir.xhtml
+src
+└── main
+    ├── java
+    │
+    └── br.com.cesumar.biblioteca.sistemabiblioteca
+        ├── controller
+        │   ├── CadastroLivroServlet
+        │   ├── DashboardServlet
+        │   ├── ExcluirLivroServlet
+        │   └── ListarLivroServlet
+        │
+        ├── model
+        │   ├── Livro
+        │   └── LivroDAO
+        │
+        └── view
+            └── LivroBean
+
+webapp
+├── index.jsp
+├── cadastro-livro.jsp
+├── listar-livros.jsp
+├── style.css
+└── app.js
 ```
 
 ---
 
-## ⚙️ Como Executar o Projeto
+## 🏗 Arquitetura
+
+Projeto organizado utilizando o padrão MVC:
+
+- **Model** → regras e dados
+- **View** → interface JSP
+- **Controller** → Servlets
+
+---
+
+## ▶ Como Executar
 
 ### Pré-requisitos
 
-Instale os seguintes softwares:
-
-- Java JDK 17 ou superior
+- Java 17+
+- Maven
 - Apache Tomcat
-- IDE Java:
-  - NetBeans
-  - Eclipse
-  - IntelliJ IDEA
 
----
-
-### Clonar o Repositório
+### Clonar
 
 ```bash
-git clone https://github.com/Leonardo-Huck/BibliotecaCesumar.git
+git clone https://github.com/Leonardo-Huck/SistemaBiblioteca.git
 ```
 
----
+### Executar
 
-### Abrir na IDE
+```bash
+mvn clean package
+```
 
-Importe o projeto como:
+Gerará:
 
 ```text
-Java Web Application
+target/sistema-biblioteca.war
 ```
 
----
+Realize o deploy no Tomcat.
 
-### Configurar o Tomcat
-
-1. Adicione o servidor na IDE.
-2. Vincule o projeto ao servidor.
-3. Execute a aplicação.
-
----
-
-### Acessar no Navegador
+Depois acesse:
 
 ```text
-http://localhost:8080/BibliotecaCesumar/
+http://localhost:8080/sistema-biblioteca
 ```
-
----
-
-## 📌 Regras de Negócio Implementadas
-
-- Cadastro somente com todos os campos preenchidos;
-- ISBN validado antes do cadastro;
-- Exclusão baseada em ISBN;
-- Separação entre interface e regras de negócio;
-- Controle centralizado utilizando Servlets.
 
 ---
 
 ## 📷 Demonstração
 
-### Tela de Cadastro
+Adicione capturas:
 
-```text
-[ Inserir captura de tela ]
-```
-
-### Tela de Listagem
-
-```text
-[ Inserir captura de tela ]
-```
-
-### Tela de Exclusão
-
-```text
-[ Inserir captura de tela ]
-```
-
----
-
-## 🧪 Exemplo de Fluxo
-
-```text
-Cadastrar Livro
-      ↓
-Salvar Dados
-      ↓
-Listar Livros
-      ↓
-Excluir Livro
-      ↓
-Atualizar Lista
-```
-
----
-
-## 📚 Conceitos Aplicados
-
-- Programação Orientada a Objetos (POO)
-- Arquitetura MVC
-- Desenvolvimento Web com Java
-- Servlets
-- JSP
-- JSF
-- Tratamento de Erros
-- Organização em Camadas
+- Tela inicial
+- Cadastro
+- Listagem
 
 ---
 
 ## 🔮 Melhorias Futuras
 
-- Integração com banco de dados (MySQL/PostgreSQL);
-- Sistema de autenticação;
-- Paginação da listagem;
-- Pesquisa de livros;
-- Edição de cadastro;
-- Interface responsiva.
+- Persistência com banco de dados
+- Busca por livros
+- Edição
+- Paginação
+- Login de usuários
+- API REST
 
 ---
 
 ## 👨‍💻 Autor
 
-**Leonardo Monteiro Huck**
+Leonardo Monteiro Huck
 
 GitHub:
-
 https://github.com/Leonardo-Huck
-
----
-
-## 📄 Licença
-
-Este projeto foi desenvolvido exclusivamente para fins acadêmicos como atividade da disciplina de Desenvolvimento Web — Universidade Cesumar.

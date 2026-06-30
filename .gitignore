@@ -1,70 +1,69 @@
-# Maven
+# ==========================
+# Java / Maven
+# ==========================
 target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
+dependency-reduced-pom.xml
 
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# ==========================
 # IntelliJ IDEA
+# ==========================
 .idea/
 *.iml
 out/
 
-# Compilados Java
-*.class
+# ==========================
+# Eclipse
+# ==========================
+.project
+.classpath
+.settings/
 
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# ==========================
+# NetBeans
+# ==========================
+nbproject/private/
+build/
+
+# ==========================
 # Logs
+# ==========================
+logs/
 *.log
 
-# Tomcat
-tomcat/
-work/
-temp/
-
-# Arquivos temporários
-*.tmp
-*.temp
-
-# Sistema Windows
+# ==========================
+# Sistema operacional
+# ==========================
+.DS_Store
 Thumbs.db
 Desktop.ini
 
-# Sistema macOS
-.DS_Store
-
-# Configurações locais
+# ==========================
+# Variáveis locais
+# ==========================
 .env
 .env.*
 
-# Arquivos gerados
-dependency-reduced-pom.xml
-
-# Arquivos de build
-build/
-
-# WAR e JAR gerados
-*.war
-*.jar
-
-# Cache Maven Wrapper
-.mvn/wrapper/maven-wrapper.jar
-
-# Pasta do IntelliJ Tomcat local
-.idea/artifacts/
-.idea/libraries/
-
-# Configurações locais do usuário
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries/
-.idea/**/shelf/
-
-# Arquivos de deployment
-webapps/
-
-# Banco local (caso use depois)
+# ==========================
+# Banco local
+# ==========================
 *.db
 *.sqlite
-.idea
