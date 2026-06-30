@@ -96,18 +96,22 @@ public class CadastroLivroServlet
                 );
 
 
-        Livro livro =
-                new Livro(
+        String categoria =
+                request.getParameter("categoria");
 
-                        titulo,
-
-                        autor,
-
-                        ano,
-
-                        isbn
-
+        int quantidade =
+                Integer.parseInt(
+                        request.getParameter("quantidade")
                 );
+
+        Livro livro = new Livro(
+                titulo,
+                autor,
+                ano,
+                isbn,
+                categoria,
+                quantidade
+        );
 
 
         LivroDAO dao =

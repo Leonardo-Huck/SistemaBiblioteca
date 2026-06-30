@@ -9,45 +9,26 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/listar")
-
-public class ListarLivroServlet
-        extends HttpServlet {
+public class ListarLivroServlet extends HttpServlet {
 
     @Override
-
     protected void doGet(
-
             HttpServletRequest request,
-
             HttpServletResponse response
+    ) throws ServletException, IOException {
 
-    )
-
-            throws ServletException,
-            IOException {
-
-        LivroDAO dao =
-                new LivroDAO();
+        LivroDAO dao = new LivroDAO();
 
         request.setAttribute(
-
                 "livros",
-
                 dao.listar()
-
         );
 
         request.getRequestDispatcher(
-
-                        "lista.jsp"
-
-                )
-
-                .forward(
-                        request,
-                        response
-                );
-
+                "/listar-livros.jsp"
+        ).forward(
+                request,
+                response
+        );
     }
-
 }

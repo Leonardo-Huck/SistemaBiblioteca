@@ -12,70 +12,12 @@ https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
         Sistema Biblioteca
     </display-name>
 
-    <!-- Desabilita CDI no JSF -->
-
-    <context-param>
-
-        <param-name>
-
-            com.sun.faces.enableCdiResolverChain
-
-        </param-name>
-
-        <param-value>
-
-            false
-
-        </param-value>
-
-    </context-param>
-
-    <!-- JSF -->
-
-    <servlet>
-
-        <servlet-name>
-
-            Faces Servlet
-
-        </servlet-name>
-
-        <servlet-class>
-
-            jakarta.faces.webapp.FacesServlet
-
-        </servlet-class>
-
-        <load-on-startup>
-
-            1
-
-        </load-on-startup>
-
-    </servlet>
-
-    <servlet-mapping>
-
-        <servlet-name>
-
-            Faces Servlet
-
-        </servlet-name>
-
-        <url-pattern>
-
-            *.xhtml
-
-        </url-pattern>
-
-    </servlet-mapping>
-
+    <!-- Página inicial -->
     <welcome-file-list>
 
+        <!-- Abre o Dashboard (Servlet) -->
         <welcome-file>
-
-            cadastro.jsp
-
+            dashboard
         </welcome-file>
 
     </welcome-file-list>

@@ -7,6 +7,9 @@ public class Livro {
     private int ano;
     private String isbn;
 
+    private String categoria;
+    private int quantidade;
+
     public Livro() {
     }
 
@@ -14,12 +17,16 @@ public class Livro {
             String titulo,
             String autor,
             int ano,
-            String isbn
+            String isbn,
+            String categoria,
+            int quantidade
     ) {
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
         this.isbn = isbn;
+        this.categoria = categoria;
+        this.quantidade = quantidade;
     }
 
     public String getTitulo() {
@@ -52,6 +59,22 @@ public class Livro {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
 }
